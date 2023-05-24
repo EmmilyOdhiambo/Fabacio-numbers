@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvNumbers"
         android:layout_width="409dp"
         android:layout_height="729dp"
         android:layout_marginTop="4dp"

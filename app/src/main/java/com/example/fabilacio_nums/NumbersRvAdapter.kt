@@ -8,24 +8,21 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
 class NumbersRvAdapter (var number:List<Int>):RecyclerView.Adapter<NumbersRvAdapter.NumbersViewHolder>(){
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): NumbersRvAdapter.NumbersViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NumbersRvAdapter.NumbersViewHolder {
      val view =LayoutInflater.from(parent.context).inflate(R.layout.number_list_item,parent,false)
-        return NumbersViewHolder
+        return NumbersViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: NumbersRvAdapter.NumbersViewHolder, position: Int) {
-        holder.tvNumber.text=numbers[position].toString()
+        holder.tvNumber.text=number[position].toString()
 
     }
 
     override fun getItemCount(): Int {
-        return numbers.size
+        return number.size
 
     }
     class NumbersViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
-        var tvNumber=itemView.findViewById<TextView>(R.Id.tvNumbers)
+        var tvNumber=itemView.findViewById<TextView>(R.id.tvNumbers)
     }
 }
